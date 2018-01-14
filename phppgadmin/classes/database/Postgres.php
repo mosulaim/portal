@@ -11,7 +11,7 @@ include_once('./classes/database/ADODB_base.php');
 
 class Postgres extends ADODB_base {
 
-	var $major_version = 9.2;
+	var $major_version = 9.5;
 	// Max object name length
 	var $_maxNameLen = 63;
 	// Store the current schema
@@ -230,7 +230,7 @@ class Postgres extends ADODB_base {
 	 * @return Data formatted for on-screen display
 	 */
 	function escapeBytea($data) {
-		return $data;
+		return htmlentities($data, ENT_QUOTES, 'UTF-8');
 	}
 
 	/**
@@ -275,6 +275,8 @@ class Postgres extends ADODB_base {
                 }
 			case 'text':
 			case 'text[]':
+			case 'json':
+			case 'jsonb': 
 			case 'xml':
 			case 'xml[]':
 				$n = substr_count($value, "\n");
@@ -417,7 +419,7 @@ class Postgres extends ADODB_base {
 	}
 
 	function getHelpPages() {
-		include_once('./help/PostgresDoc92.php');
+		include_once('./help/PostgresDoc95.php');
 		return $this->help_page;
 	}
 
@@ -2408,7 +2410,7 @@ class Postgres extends ADODB_base {
 				'relname' => $_autovacs->fields['relname']
 			);
 
-			foreach (explode(',', $_autovacs->fields['reloptions']) AS $var) {
+			foreach (explode(',', $_autovacs->fields['reloptions']) as $var) {
 				list($o, $v) = explode('=', $var);
 				$_[$o] = $v; 
 			}
@@ -4112,14 +4114,19 @@ class Postgres extends ADODB_base {
 
 		$sql = "
 			SELECT
-				pc.oid AS prooid, proname, pg_catalog.pg_get_userbyid(proowner) AS proowner,
+				pc.oid AS prooid, proname, 
+				pg_catalog.pg_get_userbyid(proowner) AS proowner,
 				nspname as proschema, lanname as prolanguage, procost, prorows,
 				pg_catalog.format_type(prorettype, NULL) as proresult, prosrc,
 				probin, proretset, proisstrict, provolatile, prosecdef,
 				pg_catalog.oidvectortypes(pc.proargtypes) AS proarguments,
 				proargnames AS proargnames,
 				pg_catalog.obj_description(pc.oid, 'pg_proc') AS procomment,
-				proconfig
+				proconfig,
+				(select array_agg( (select typname from pg_type pt
+					where pt.oid = p.oid) ) from unnest(proallargtypes) p)
+				AS proallarguments,
+				proargmodes
 			FROM
 				pg_catalog.pg_proc pc, pg_catalog.pg_language pl,
 				pg_catalog.pg_namespace pn
@@ -7198,12 +7205,14 @@ class Postgres extends ADODB_base {
 	 */
 	function getProcesses($database = null) {
 		if ($database === null)
-			$sql = "SELECT datname, usename, pid, query, query_start
+			$sql = "SELECT datname, usename, pid, waiting, state_change as query_start,
+                  case when state='idle in transaction' then '<IDLE> in transaction' when state = 'idle' then '<IDLE>' else query end as query 
 				FROM pg_catalog.pg_stat_activity
 				ORDER BY datname, usename, pid";
 		else {
 			$this->clean($database);
-			$sql = "SELECT datname, usename, pid, query, query_start
+			$sql = "SELECT datname, usename, pid, waiting, state_change as query_start,
+                  case when state='idle in transaction' then '<IDLE> in transaction' when state = 'idle' then '<IDLE>' else query end as query 
 				FROM pg_catalog.pg_stat_activity
 				WHERE datname='{$database}'
 				ORDER BY usename, pid";
@@ -7980,6 +7989,7 @@ class Postgres extends ADODB_base {
 	function hasQueryCancel() { return true; }
 	function hasTablespaces() { return true; }
 	function hasUserRename() { return true; }
+    function hasUserSignals() { return true; }
 	function hasVirtualTransactionId() { return true; }
 	function hasAlterDatabase() { return $this->hasAlterDatabaseRename(); }
 	function hasDatabaseCollation() { return true; }
