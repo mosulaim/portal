@@ -64,7 +64,7 @@ function initMap() {
         
   	// Load SLD.
 	OpenLayers.Request.GET({
-		url: "http://portal-sulgis.7e14.starter-us-west-2.openshiftapps.com/assets/sld/sld.xml",
+		url: "http://portal-geomos.1d35.starter-us-east-1.openshiftapps.com/assets/sld/sld.xml",
 		success: sld_complete
 	});  
   
