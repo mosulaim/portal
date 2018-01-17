@@ -65,7 +65,7 @@ exit;
 }
  
 # Build SQL SELECT statement and return the geometry as a GeoJSON element in EPSG: 4326
-$sql = "SELECT " . pg_escape_string($fields) . ", st_asgeojson(st_transform(" . pg_escape_string($geomfield) . ",$srid)) AS geojson FROM " . pg_escape_string($geotable);
+$sql = "SELECT " . pg_escape_string($fields) . ", x, y FROM " . pg_escape_string($geotable);
 if (strlen(trim($parameters)) > 0) {
 $sql .= " WHERE " . pg_escape_string($parameters);
 }
@@ -91,12 +91,12 @@ exit;
 $output = '';
 $rowOutput = '';
  
-while ($row = pg_fetch_assoc($rs)) { if ($row['geojson'] != '') {
-$rowOutput = (strlen($rowOutput) > 0 ? ',' : '') . '{"type": "Feature", "geometry": ' . $row['geojson'] . ', "properties": {';
+while ($row = pg_fetch_assoc($rs)) { if ($row['x'] != '' && $row['y'] != '') {
+$rowOutput = (strlen($rowOutput) > 0 ? ',' : '') . '{"type": "Feature", "geometry": {"type":"Point","coordinates":[' . $row['x'] . ',' . $row['y'] . ']}, "properties": {';
 $props = '';
 $id = '';
 foreach ($row as $key => $val) {
-if ($key != "geojson" && $key != $geomfield) {
+if ($key != "x" && $key != "y") {
 $props .= (strlen($props) > 0 ? ',' : '') . '"' . $key . '":"' . escapeJsonString($val) . '"';
 }
 if ($key == "id") {

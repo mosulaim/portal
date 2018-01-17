@@ -8,7 +8,7 @@ var selectDockControl;
 var selectedDock;
 
 var statedata = 'nigeria.geojson';
-var incdata ='data.php?geotable=assets&key=' + Math.random();
+var incdata ='pdata.php?geotable=assets&key=' + Math.random();
 
 var mapPanel, legendPanel;
 

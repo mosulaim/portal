@@ -7,12 +7,12 @@
     <title>Assets Dashboard</title>
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/resources/css/ext-all.css" />
-    <link rel="stylesheet" href="../polity/openlayers/theme/default/style.css" type="text/css">
-    <link rel="stylesheet" href="../polity/openlayers/theme/default/google.css" type="text/css">
+    <link rel="stylesheet" href="../openlayers/theme/default/style.css" type="text/css">
+    <link rel="stylesheet" href="../openlayers/theme/default/google.css" type="text/css">
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/4.2.1/bootstrap.js"></script>
     <script src="http://maps.google.com/maps/api/js?v=3.2&sensor=false"></script>
-    <script src="../polity/openlayers/OpenLayers.js"></script>
+    <script src="../openlayers/OpenLayers.js"></script>
     <script type="text/javascript" src="js/layout.js"></script>
    
     <script type="text/javascript" src="js/const.js"></script>
@@ -121,7 +121,7 @@
 	</table>
 	
 	<p><b>2. Identify Incidents:</b></p>
-	<p> a) Get details of each incident.</p>
+	<p> a) Get details of each asset.</p>
 
 	<input type="submit" value="Identify" onclick="enableIncSelect()" style="width: 100%" />
 	<p> b) Open related Documents (Video/Picture/Audio/file e.t.c)</p>
@@ -134,10 +134,10 @@
   <table style="width: 100%">
 		<tr>
 			<td><input type="submit" value="States" onclick="statereload()" style="width: 100%" /></td>
-			<td><input type="submit" value="Reload Incidents" onclick="increload()" style="width: 100%" /></td>
+			<td><input type="submit" value="Reload Assets" onclick="increload()" style="width: 100%" /></td>
 		</tr>
 	</table> 
-  <input id="incauto" type="checkbox" /> Automatically refresh Incidents every 5 seconds.<br />
+  <input id="incauto" type="checkbox" /> Automatically refresh Enumeration display every 5 seconds.<br />
 </div>
 
 <div id="statByDistrictForm" style="padding: 15%; padding-top: 5%; align: center">
@@ -154,11 +154,11 @@
  
   	<p><b>2. Show Chart of metrics by State:</b></p>
     <form>
-		<input id="votedparties" type="radio" name="chartRadio" value="votedparties" checked /> Show Parties with votes.<br />
-		<input id="allparties" type="radio" name="chartRadio" value="allparties" /> Show all parties.<br />
+		<input id="votedparties" type="radio" name="chartRadio" value="votedparties" checked /> Show Assets with counts.<br />
+		<input id="allparties" type="radio" name="chartRadio" value="allparties" /> Show all assets.<br />
     <table style="width: 100%">
 		<tr>
-			<td>	<input id="leadparties" type="radio" name="chartRadio" value="leadparties" /> Show the N leading parties.</td>
+			<td>	<input id="leadparties" type="radio" name="chartRadio" value="leadparties" /> Show the N greatest assets.</td>
 			<td><input id="np" value="3" type="text" style="width: 100%"></input></td> 
 		</tr>  
 	</table><br />
@@ -174,9 +174,9 @@
 	<p><b>Select report type:</b></p>
 	<form>
 		<!--<input id="tot_stat_district" type="radio" name="reportRadio" value="tot_stat_district" /> Vote count per State.<br />-->
-		<input id="vote_list" type="radio" name="reportRadio" value="vote_list" checked /> Total vote counts per party in each State.<br />
-		<input id="inc_list" type="radio" name="reportRadio" value="inc_list" /> List of Election Incidents.<br />
-		<input id="leading_p" type="radio" name="reportRadio" value="leading_p" /> Leading party in each state.<br />	
+		<input id="vote_list" type="radio" name="reportRadio" value="vote_list" /> Total counts per category in each State.<br />
+		<input id="inc_list" type="radio" name="reportRadio" value="inc_list" checked /> List of Enumerated Assets.<br />
+		<input id="leading_p" type="radio" name="reportRadio" value="leading_p" /> Highest category of assets in each state.<br />	
 	</form> 
 	<input id="getReport" type="submit" value="Fetch" onclick="getReport()" style="width: 100%" />
 

@@ -42,7 +42,7 @@ Ext.onReady(function() {
                 region: 'north',
                 height: 60,
                 maxHeight: 60,
-                html: '<img src="./img/Interspatial-logo.jpg" alt="GeoStation" style="position: absolute; top: 0; right: 5px; border: 0; height: 60px"/> Enumeration Dashboard'
+                html: '<img src="./img/Interspatial-logo.JPG" alt="Interspatial" style="position: absolute; top: 0; right: 5px; border: 0; height: 60px"/> Enumeration Dashboard'
             },{
             region: 'west',
             collapsible: true,
@@ -55,7 +55,7 @@ Ext.onReady(function() {
             layout: 'accordion',
 	    items:[{
 			id: 'tool_nearby',
-			title: 'My Position / Identify Incidents / Symbology',
+			title: 'My Position / Identify Assets / Symbology',
       autoScroll: true,
 			layout: 'fit'
 		},{
