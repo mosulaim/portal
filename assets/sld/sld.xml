@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sld:StyledLayerDescriptor version="1.0.0"
+    xmlns:sld="http://www.opengis.net/sld"
+    xmlns="http://www.opengis.net/sld" 
+    xmlns:ogc="http://www.opengis.net/ogc"
+    xmlns:gml="http://www.opengis.net/gml"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.0.0/StyledLayerDescriptor.xsd"
+    xmlns:se="http://www.opengis.net/se">
+
+  <sld:NamedLayer>
+    <sld:Name>DockStn</sld:Name>
+    <sld:UserStyle>
+      <sld:Name>DockStn</sld:Name>
+      <sld:IsDefault>1</sld:IsDefault>
+      <sld:FeatureTypeStyle>
+        <sld:Rule>
+          <sld:PointSymbolizer>
+            <sld:Graphic>
+              <sld:ExternalGraphic>
+                <sld:OnlineResource xlink:href="sld/img/marker.png" />
+                <sld:Format>image/png</sld:Format>
+              </sld:ExternalGraphic>
+              <sld:Opacity>0.9</sld:Opacity>
+              <sld:Size>22</sld:Size>
+            </sld:Graphic>
+          </sld:PointSymbolizer>
+        </sld:Rule>
+      </sld:FeatureTypeStyle>
+    </sld:UserStyle>
+  </sld:NamedLayer>
+
+  <sld:NamedLayer>
+    <sld:Name>DockStnNearby</sld:Name>
+    <sld:UserStyle>
+      <sld:Name>DockStnNearby</sld:Name>
+      <sld:IsDefault>1</sld:IsDefault>
+      <sld:FeatureTypeStyle>
+        <sld:Rule>
+          <sld:PointSymbolizer>
+            <sld:Graphic>
+              <sld:ExternalGraphic>
+                <sld:OnlineResource xlink:href="sld/img/marker.png" />
+                <sld:Format>image/png</sld:Format>
+              </sld:ExternalGraphic>
+              <sld:Opacity>1.0</sld:Opacity>
+              <sld:Size>38</sld:Size>
+            </sld:Graphic>
+          </sld:PointSymbolizer>
+        </sld:Rule>
+      </sld:FeatureTypeStyle>
+    </sld:UserStyle>
+  </sld:NamedLayer>
+
+  <sld:NamedLayer>
+    <sld:Name>Districts</sld:Name>
+    <sld:UserStyle>
+      <sld:Name>Districts Style</sld:Name>
+      <sld:IsDefault>1</sld:IsDefault>
+      <sld:FeatureTypeStyle>
+        <sld:Rule>
+          <sld:PolygonSymbolizer>
+			<sld:Fill>
+                            <sld:GraphicFill>
+                                <sld:Graphic>
+                                    <sld:Mark>
+                                        <sld:WellKnownName>shape://plus</sld:WellKnownName>
+                                        <sld:Fill/>
+                                        <sld:Stroke>
+                                            <sld:CssParameter name="stroke">#808080</sld:CssParameter>
+                                            <sld:CssParameter name="stroke-width">3.0</sld:CssParameter>
+                                        </sld:Stroke>
+                                    </sld:Mark>
+                                    <sld:Size>3.0</sld:Size>
+                                </sld:Graphic>
+                            </sld:GraphicFill>
+                            <sld:CssParameter name="fill">#A8D5C8</sld:CssParameter>
+                            <sld:CssParameter name="fill-opacity">0.2</sld:CssParameter>
+                        </sld:Fill>
+                        <sld:Stroke>
+                            <sld:CssParameter name="stroke">#4D4D4D</sld:CssParameter>
+                            <sld:CssParameter name="stroke-width">0.7</sld:CssParameter>
+                        </sld:Stroke>
+          </sld:PolygonSymbolizer>
+        </sld:Rule>
+      </sld:FeatureTypeStyle>
+    </sld:UserStyle>
+  </sld:NamedLayer>
+   <NamedLayer>
+    <Name>StateElect</Name>
+    <UserStyle>
+      <Name>StateElect</Name>
+      <IsDefault>1</IsDefault>
+      <FeatureTypeStyle>
+        <Rule>
+          <Name>GJD</Name>
+          <Title>GJD</Title>
+          <ogc:Filter>
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>party</ogc:PropertyName>
+              <ogc:Literal>GJD</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#0055ff</CssParameter>
+              <CssParameter name="fill-opacity">0.4</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#ffffff</CssParameter>
+              <CssParameter name="stroke-width">1.5</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+          <TextSymbolizer>
+         <Label>
+           <ogc:PropertyName>party</ogc:PropertyName>
+         </Label>
+         <Font>
+           <CssParameter name="font-family">Arial</CssParameter>
+           <CssParameter name="font-size">13</CssParameter>
+           <CssParameter name="font-style">normal</CssParameter>
+           <CssParameter name="font-weight">bold</CssParameter>
+         </Font>
+         <Fill>
+           <CssParameter name="fill">#ffffff</CssParameter>
+         </Fill>
+       </TextSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>LAKE</Name>
+          <Title>LAKE</Title>
+          <ogc:Filter>
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>party</ogc:PropertyName>
+              <ogc:Literal>LAKE</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#0000ff</CssParameter>
+              <CssParameter name="fill-opacity">0.2</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#ffffff</CssParameter>
+              <CssParameter name="stroke-width">1.5</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>TQR</Name>
+          <Title>TQR</Title>
+          <ogc:Filter>
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>party</ogc:PropertyName>
+              <ogc:Literal>TQR</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#ff0000</CssParameter>
+              <CssParameter name="fill-opacity">0.4</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#ffffff</CssParameter>
+              <CssParameter name="stroke-width">1.5</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+          <TextSymbolizer>
+         <Label>
+           <ogc:PropertyName>party</ogc:PropertyName>
+         </Label>
+         <Font>
+           <CssParameter name="font-family">Arial</CssParameter>
+           <CssParameter name="font-size">13</CssParameter>
+           <CssParameter name="font-style">normal</CssParameter>
+           <CssParameter name="font-weight">bold</CssParameter>
+         </Font>
+         <Fill>
+           <CssParameter name="fill">#ffffff</CssParameter>
+         </Fill>
+       </TextSymbolizer>
+        </Rule>
+      </FeatureTypeStyle>
+    </UserStyle>
+  </NamedLayer>
+</sld:StyledLayerDescriptor>
