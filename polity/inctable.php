@@ -2,7 +2,7 @@
 
 # Retrive URL variables
 if (empty($_GET['geotable'])) {
-$geotable = 'assets';
+$geotable = 'electionevent';
 } else
 $geotable = $_GET['geotable'];
  
