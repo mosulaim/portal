@@ -39,7 +39,7 @@ require_once __DIR__ . '/gdb_constring.php';
    $db = pg_connect(DB_CONNSTRING);     
 
     // mysql inserting a new row
-    $result = pg_query($db, "INSERT INTO electionevent(name, priority, description, \"fileURL\", geom) VALUES('$name', '$priority', '$description', '$fileURL', ST_SetSRID(ST_MakePoint($lng, $lat),4326))");
+    $result = pg_query($db, "INSERT INTO electionevent(name, priority, description, \"fileURL\", x, y) VALUES('$name', '$priority', '$description', '$fileURL', '$lng', '$lat')");
 
     // check if row inserted or not
     if ($result) {
