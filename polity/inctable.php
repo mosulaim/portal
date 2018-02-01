@@ -2,7 +2,7 @@
 
 # Retrive URL variables
 if (empty($_GET['geotable'])) {
-$geotable = 'electionevent';
+$geotable = 'assets';
 } else
 $geotable = $_GET['geotable'];
  
@@ -44,7 +44,7 @@ exit;
 }
  
 # Build SQL SELECT statement and return the geometry as a GeoJSON element in EPSG: 4326
-$sql = "SELECT " . pg_escape_string($fields) . ", st_aslatlontext(st_transform(" . pg_escape_string($geomfield) . ",$srid)) AS geojson FROM " . pg_escape_string($geotable);
+$sql = "SELECT " . pg_escape_string($fields) . " FROM " . pg_escape_string($geotable);
 if (strlen(trim($parameters)) > 0) {
 $sql .= " WHERE " . pg_escape_string($parameters);
 }
@@ -69,19 +69,19 @@ while ($row = pg_fetch_assoc($rs)) {
 $props = '';
 $thead = '';
 foreach ($row as $key => $val) {
- if ($key != "geojson" && $key != $geomfield) {
+
  $thead .='<th><b>' . strtoupper($key) . '</b></th>';
    if ($key == "fileURL" && $val !='')  $val = "<a href= $val target='_blank'>Picture, File, Audio or Video</a>"; 
  $props .='<td>' . $val . '</td>';
-}
+
 }
 
-$rowOutput = "<tr $ralt>" . $props . '<td>' . $row['geojson'] . '</td></tr>';
+$rowOutput = "<tr $ralt>" . $props . '</tr>';
 $output .= $rowOutput;
 if ($ralt == '') $ralt =  'class="alt"'; else $ralt = '';
 }
 //echo $props;
-$thead = '<thead><tr>' . $thead . '<th><b>COORDINATES</b></th></tr></thead>';
+$thead = '<thead><tr>' . $thead . '</tr></thead>';
 $output = '<table cellspacing="0" id="hor-zebra" >' . $thead. '<tbody>'. $output . ' </tbody></table>';
 echo $output;
 ?>
