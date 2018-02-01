@@ -42,7 +42,7 @@ Ext.onReady(function() {
                 region: 'north',
                 height: 60,
                 maxHeight: 60,
-                html: '<img src="./img/Interspatial-logo.JPG" alt="Interspatial" style="position: absolute; top: 0; right: 5px; border: 0; height: 60px"/> Polity'
+                html: '<img src="./img/gtech.png" alt="GTech" style="position: absolute; top: 0; right: 5px; border: 0; height: 60px"/> Polity'
             },{
             region: 'west',
             collapsible: true,

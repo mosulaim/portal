@@ -7,8 +7,8 @@ var selectedFeauture;
 var selectDockControl;
 var selectedDock;
 
-var statedata = 'statesdata.php?key=' + Math.random();
-var incdata ='data.php?geotable=electionevent&key=' + Math.random();
+var statedata = 'nigeria.geojson';
+var incdata ='pdata.php?geotable=electionevent&key=' + Math.random();
 
 var mapPanel, legendPanel;
 
@@ -64,7 +64,7 @@ function initMap() {
         
   	// Load SLD.
 	OpenLayers.Request.GET({
-		url: "http://map-geomos.rhcloud.com/polity/sld/sld.xml",
+		url: "http://portal-geomos.1d35.starter-us-east-1.openshiftapps.com/polity/sld/sld.xml",
 		success: sld_complete
 	});  
   
