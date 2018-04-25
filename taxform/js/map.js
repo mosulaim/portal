@@ -147,7 +147,7 @@ function interestUnselect(feature) {
 function getbusiness(pptyid) {
   var endpoint;
   var handler;
-  handler = 'http://portal-geomos.1d35.starter-us-east-1.openshiftapps.com/taxform/table.php?geotable=business&fields=gid,businame,busiprod,lt_pd_year,lt_amt_pd&parameters="ppty_id"=\''  + pptyid + '\'';
+  handler = 'table.php?geotable=business&fields=gid,businame,busiprod,lt_pd_year,lt_amt_pd&parameters="ppty_id"=\''  + pptyid + '\'';
 
   endpoint =  handler;
 
@@ -202,7 +202,7 @@ function updatebusi(bgid){
 	var id = bgid;
 //	$('#modal-title').html("Edit Employee");
 	$.ajax({  
-		 url:"http://portal-geomos.1d35.starter-us-east-1.openshiftapps.com/taxform/update.php?gid="+id,  
+		 url:"update.php?gid="+id,  
 		 method:"GET", 
 		 dataType:"json",  
 		 success:function(data){ 
@@ -223,7 +223,7 @@ function submitform() {
 	data = $("#busiform").serializeArray();
 	$.ajax({
 	  type: "POST",  
-	  url: "http://portal-geomos.1d35.starter-us-east-1.openshiftapps.com/taxform/response.php",  
+	  url: "response.php",  
 	  data: data,
 	  dataType: "json",       
 	  success: function(response)  
