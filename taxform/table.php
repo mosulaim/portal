@@ -37,7 +37,7 @@ $sort = $_GET['sort'];
 require_once __DIR__ . '/gdb_constring.php';
 
 
-   $conn = pg_connect(DB_CONNSTRING); 
+  $conn = pg_connect(getenv("DATABASE_URL"));
 if (!$conn) {
 echo "Not connected : " . pg_error();
 exit;

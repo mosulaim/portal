@@ -7,7 +7,7 @@ $response = array();
 require_once __DIR__ . '/gdb_constring.php';
 
 
-   $db = pg_connect(DB_CONNSTRING);     
+$db = pg_connect(getenv("DATABASE_URL"));     
    
 // check for post data
 if (isset($_GET["gid"])) {
