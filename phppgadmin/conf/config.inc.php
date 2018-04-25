@@ -11,14 +11,14 @@
 	// indexed from zero upwards.
 
 	// Display name for the server on the login screen
-	$conf['servers'][0]['desc'] = 'PostgreSQL';
+	$conf['servers'][0]['desc'] = 'PostgreSQL on Heroku';
 
 	// Hostname or IP address for server.  Use '' for UNIX domain socket.
 	// use 'localhost' for TCP/IP connection on this computer
-	$conf['servers'][0]['host'] = getenv('POSTGRESQL_SERVICE_HOST');
+	$conf['servers'][0]['host'] = parse_url(getenv("DATABASE_URL"))['host'];
 
 	// Database port on server (5432 is the PostgreSQL default)
-	$conf['servers'][0]['port'] = getenv('POSTGRESQL_SERVICE_PORT');
+	$conf['servers'][0]['port'] = parse_url(getenv("DATABASE_URL"))['port'];
   //done
 
 	// Database SSL mode
