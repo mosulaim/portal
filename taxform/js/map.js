@@ -67,7 +67,7 @@ var vlayer = new OpenLayers.Layer.Vector( "Editable" );
             
   	// Load SLD.
 	OpenLayers.Request.GET({
-		url: "http://www.geostation.net/taxform/sld/sld.xml",
+		url: "http://geostation.herokuapp.com/taxform/sld/sld.xml",
 		success: sld_complete
 	});  
   
