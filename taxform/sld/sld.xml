@@ -1,0 +1,939 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sld:StyledLayerDescriptor version="1.0.0"
+    xmlns:sld="http://www.opengis.net/sld"
+    xmlns="http://www.opengis.net/sld" 
+    xmlns:ogc="http://www.opengis.net/ogc"
+    xmlns:gml="http://www.opengis.net/gml"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.0.0/StyledLayerDescriptor.xsd"
+    xmlns:se="http://www.opengis.net/se">
+
+<NamedLayer>
+    <Name>BLDLandUse</Name>
+    <UserStyle>
+      <Name>BLDLandUse</Name>
+      <IsDefault>1</IsDefault>
+      <FeatureTypeStyle>
+        <Rule>
+          <Name>COMMERCIAL</Name>
+          <Description>
+            <Title>COMMERCIAL</Title>
+          </Description>
+          <ogc:Filter>
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>PPTY_USE</ogc:PropertyName>
+              <ogc:Literal>COMMERCIAL</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#e0b672</CssParameter>
+              <CssParameter name="fill-opacity">0.4</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0.26</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>Educational</Name>
+          <Description>
+            <Title>Educational</Title>
+          </Description>
+          <ogc:Filter>
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>PPTY_USE</ogc:PropertyName>
+              <ogc:Literal>Educational</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#606ffa</CssParameter>
+              <CssParameter name="fill-opacity">0.4</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0.26</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>INSTITUTIONAL</Name>
+          <Description>
+            <Title>INSTITUTIONAL</Title>
+          </Description>
+          <ogc:Filter>
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>PPTY_USE</ogc:PropertyName>
+              <ogc:Literal>INSTITUTIONAL</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#95ecff</CssParameter>
+              <CssParameter name="fill-opacity">0.4</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0.26</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>Recreational</Name>
+          <Description>
+            <Title>Recreational</Title>
+          </Description>
+          <ogc:Filter>
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>PPTY_USE</ogc:PropertyName>
+              <ogc:Literal>Recreational</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#00aa7f</CssParameter>
+              <CssParameter name="fill-opacity">0.4</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0.26</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>RESIDENTIAL</Name>
+          <Description>
+            <Title>RESIDENTIAL</Title>
+          </Description>
+          <ogc:Filter>
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>PPTY_USE</ogc:PropertyName>
+              <ogc:Literal>RESIDENTIAL</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#c47ad8</CssParameter>
+              <CssParameter name="fill-opacity">0.4</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0.26</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name></Name>
+          <Description>
+            <Title>Other</Title>
+          </Description>
+          <ogc:Filter>
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>PPTY_USE</ogc:PropertyName>
+              <ogc:Literal></ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#f7c717</CssParameter>
+              <CssParameter name="fill-opacity">0.4</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0.26</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+      </FeatureTypeStyle>
+    </UserStyle>
+  </NamedLayer>
+
+  <sld:NamedLayer>
+    <sld:Name>DockStn</sld:Name>
+    <sld:UserStyle>
+      <sld:Name>DockStn</sld:Name>
+      <sld:IsDefault>1</sld:IsDefault>
+      <sld:FeatureTypeStyle>
+        <sld:Rule>
+          <sld:PointSymbolizer>
+            <sld:Graphic>
+              <sld:ExternalGraphic>
+                <sld:OnlineResource xlink:href="sld/img/marker.png" />
+                <sld:Format>image/png</sld:Format>
+              </sld:ExternalGraphic>
+              <sld:Opacity>0.9</sld:Opacity>
+              <sld:Size>22</sld:Size>
+            </sld:Graphic>
+          </sld:PointSymbolizer>
+        </sld:Rule>
+      </sld:FeatureTypeStyle>
+    </sld:UserStyle>
+  </sld:NamedLayer>
+
+  <sld:NamedLayer>
+    <sld:Name>DockStnNearby</sld:Name>
+    <sld:UserStyle>
+      <sld:Name>DockStnNearby</sld:Name>
+      <sld:IsDefault>1</sld:IsDefault>
+      <sld:FeatureTypeStyle>
+        <sld:Rule>
+          <sld:PointSymbolizer>
+            <sld:Graphic>
+              <sld:ExternalGraphic>
+                <sld:OnlineResource xlink:href="sld/img/marker.png" />
+                <sld:Format>image/png</sld:Format>
+              </sld:ExternalGraphic>
+              <sld:Opacity>1.0</sld:Opacity>
+              <sld:Size>38</sld:Size>
+            </sld:Graphic>
+          </sld:PointSymbolizer>
+        </sld:Rule>
+      </sld:FeatureTypeStyle>
+    </sld:UserStyle>
+  </sld:NamedLayer>
+
+  <sld:NamedLayer>
+    <sld:Name>Districts</sld:Name>
+    <sld:UserStyle>
+      <sld:Name>Districts Style</sld:Name>
+      <sld:IsDefault>1</sld:IsDefault>
+      <sld:FeatureTypeStyle>
+        <sld:Rule>
+          <sld:PolygonSymbolizer>
+			<sld:Fill>
+                            <sld:GraphicFill>
+                                <sld:Graphic>
+                                    <sld:Mark>
+                                        <sld:WellKnownName>shape://plus</sld:WellKnownName>
+                                        <sld:Fill/>
+                                        <sld:Stroke>
+                                            <sld:CssParameter name="stroke">#808080</sld:CssParameter>
+                                            <sld:CssParameter name="stroke-width">3.0</sld:CssParameter>
+                                        </sld:Stroke>
+                                    </sld:Mark>
+                                    <sld:Size>3.0</sld:Size>
+                                </sld:Graphic>
+                            </sld:GraphicFill>
+                            <sld:CssParameter name="fill">#A8D5C8</sld:CssParameter>
+                            <sld:CssParameter name="fill-opacity">0.2</sld:CssParameter>
+                        </sld:Fill>
+                        <sld:Stroke>
+                            <sld:CssParameter name="stroke">#4D4D4D</sld:CssParameter>
+                            <sld:CssParameter name="stroke-width">0.7</sld:CssParameter>
+                        </sld:Stroke>
+          </sld:PolygonSymbolizer>
+        </sld:Rule>
+      </sld:FeatureTypeStyle>
+    </sld:UserStyle>
+  </sld:NamedLayer>
+   <NamedLayer>
+    <Name>StateElect</Name>
+    <UserStyle>
+      <Name>StateElect</Name>
+      <IsDefault>1</IsDefault>
+      <FeatureTypeStyle>
+        <Rule>
+          <Name>GJD</Name>
+          <Title>GJD</Title>
+          <ogc:Filter>
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>party</ogc:PropertyName>
+              <ogc:Literal>GJD</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#0055ff</CssParameter>
+              <CssParameter name="fill-opacity">0.4</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#ffffff</CssParameter>
+              <CssParameter name="stroke-width">1.5</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+          <TextSymbolizer>
+         <Label>
+           <ogc:PropertyName>party</ogc:PropertyName>
+         </Label>
+         <Font>
+           <CssParameter name="font-family">Arial</CssParameter>
+           <CssParameter name="font-size">13</CssParameter>
+           <CssParameter name="font-style">normal</CssParameter>
+           <CssParameter name="font-weight">bold</CssParameter>
+         </Font>
+         <Fill>
+           <CssParameter name="fill">#ffffff</CssParameter>
+         </Fill>
+       </TextSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>LAKE</Name>
+          <Title>LAKE</Title>
+          <ogc:Filter>
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>party</ogc:PropertyName>
+              <ogc:Literal>LAKE</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#0000ff</CssParameter>
+              <CssParameter name="fill-opacity">0.2</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#ffffff</CssParameter>
+              <CssParameter name="stroke-width">1.5</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>TQR</Name>
+          <Title>TQR</Title>
+          <ogc:Filter>
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>party</ogc:PropertyName>
+              <ogc:Literal>TQR</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#ff0000</CssParameter>
+              <CssParameter name="fill-opacity">0.4</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#ffffff</CssParameter>
+              <CssParameter name="stroke-width">1.5</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+          <TextSymbolizer>
+         <Label>
+           <ogc:PropertyName>party</ogc:PropertyName>
+         </Label>
+         <Font>
+           <CssParameter name="font-family">Arial</CssParameter>
+           <CssParameter name="font-size">13</CssParameter>
+           <CssParameter name="font-style">normal</CssParameter>
+           <CssParameter name="font-weight">bold</CssParameter>
+         </Font>
+         <Fill>
+           <CssParameter name="fill">#ffffff</CssParameter>
+         </Fill>
+       </TextSymbolizer>
+        </Rule>
+      </FeatureTypeStyle>
+    </UserStyle>
+  </NamedLayer>
+  
+   <NamedLayer>
+    <Name>plotsLandUse</Name>
+    <UserStyle>
+      <Name>plotsLandUse</Name>
+      <IsDefault>1</IsDefault>
+      <FeatureTypeStyle>
+        <Rule>
+          <Name>Commercial</Name>
+          <Description>
+            <Title>Commercial</Title>
+          </Description>
+          <ogc:Filter>
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>landuse</ogc:PropertyName>
+              <ogc:Literal>Commercial</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#e0b672</CssParameter>
+              <CssParameter name="fill-opacity">0.4</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0.26</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>Educational</Name>
+          <Description>
+            <Title>Educational</Title>
+          </Description>
+          <ogc:Filter>
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>landuse</ogc:PropertyName>
+              <ogc:Literal>Educational</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#606ffa</CssParameter>
+              <CssParameter name="fill-opacity">0.4</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0.26</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>Institution</Name>
+          <Description>
+            <Title>Institution</Title>
+          </Description>
+          <ogc:Filter>
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>landuse</ogc:PropertyName>
+              <ogc:Literal>Institution</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#95ecff</CssParameter>
+              <CssParameter name="fill-opacity">0.4</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0.26</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>Recreational</Name>
+          <Description>
+            <Title>Recreational</Title>
+          </Description>
+          <ogc:Filter>
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>landuse</ogc:PropertyName>
+              <ogc:Literal>Recreational</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#00aa7f</CssParameter>
+              <CssParameter name="fill-opacity">0.4</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0.26</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>Residential</Name>
+          <Description>
+            <Title>Residential</Title>
+          </Description>
+          <ogc:Filter>
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>landuse</ogc:PropertyName>
+              <ogc:Literal>Residential</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#c47ad8</CssParameter>
+              <CssParameter name="fill-opacity">0.4</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0.26</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name></Name>
+          <Description>
+            <Title>Other</Title>
+          </Description>
+          <ogc:Filter>
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>landuse</ogc:PropertyName>
+              <ogc:Literal></ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#f7c717</CssParameter>
+              <CssParameter name="fill-opacity">0.4</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0.26</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+      </FeatureTypeStyle>
+    </UserStyle>
+  </NamedLayer>
+  
+  <NamedLayer>
+    <Name>plotStatus</Name>
+    <UserStyle>
+      <Name>plotStatus</Name>
+      <FeatureTypeStyle>
+        <Rule>
+          <Name>Allocated</Name>
+          <Description>
+            <Title>Allocated</Title>
+          </Description>
+          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>status</ogc:PropertyName>
+              <ogc:Literal>Allocated</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#f4d596</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0.26</CssParameter>
+              <CssParameter name="stroke-linejoin">bevel</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>Committed</Name>
+          <Description>
+            <Title>Committed</Title>
+          </Description>
+          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>status</ogc:PropertyName>
+              <ogc:Literal>Committed</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#43cbcb</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0.26</CssParameter>
+              <CssParameter name="stroke-linejoin">bevel</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>Interest Registered</Name>
+          <Description>
+            <Title>Interest Registered</Title>
+          </Description>
+          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>status</ogc:PropertyName>
+              <ogc:Literal>Interest Registered</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#e684a6</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0.26</CssParameter>
+              <CssParameter name="stroke-linejoin">bevel</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>Occupied_Constructed</Name>
+          <Description>
+            <Title>Occupied_Constructed</Title>
+          </Description>
+          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>status</ogc:PropertyName>
+              <ogc:Literal>Occupied_Constructed</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#8ee259</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0.26</CssParameter>
+              <CssParameter name="stroke-linejoin">bevel</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>Under Construction</Name>
+          <Description>
+            <Title>Under Construction</Title>
+          </Description>
+          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>status</ogc:PropertyName>
+              <ogc:Literal>Under Construction</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#7e8fda</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0.26</CssParameter>
+              <CssParameter name="stroke-linejoin">bevel</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>Vacant</Name>
+          <Description>
+            <Title>Vacant</Title>
+          </Description>
+          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>status</ogc:PropertyName>
+              <ogc:Literal>Vacant</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#bcbcbc</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0.26</CssParameter>
+              <CssParameter name="stroke-linejoin">bevel</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+      </FeatureTypeStyle>
+    </UserStyle>
+  </NamedLayer>
+
+  <NamedLayer>
+    <Name>plotProfession</Name>
+    <UserStyle>
+      <Name>plotProfession</Name>
+      <FeatureTypeStyle>
+        <Rule>
+          <Name>Businness Person</Name>
+          <Description>
+            <Title>Businness Person</Title>
+          </Description>
+          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>profession</ogc:PropertyName>
+              <ogc:Literal>Businness Person</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#dc1887</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0.26</CssParameter>
+              <CssParameter name="stroke-linejoin">bevel</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>Doctor</Name>
+          <Description>
+            <Title>Doctor</Title>
+          </Description>
+          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>profession</ogc:PropertyName>
+              <ogc:Literal>Doctor</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#3a43e8</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0.26</CssParameter>
+              <CssParameter name="stroke-linejoin">bevel</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>Engineerr</Name>
+          <Description>
+            <Title>Engineerr</Title>
+          </Description>
+          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>profession</ogc:PropertyName>
+              <ogc:Literal>Engineerr</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#aa701e</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0.26</CssParameter>
+              <CssParameter name="stroke-linejoin">bevel</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>Farmer</Name>
+          <Description>
+            <Title>Farmer</Title>
+          </Description>
+          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>profession</ogc:PropertyName>
+              <ogc:Literal>Farmer</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#699339</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0.26</CssParameter>
+              <CssParameter name="stroke-linejoin">bevel</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>Lawyer</Name>
+          <Description>
+            <Title>Lawyer</Title>
+          </Description>
+          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>profession</ogc:PropertyName>
+              <ogc:Literal>Lawyer</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#9a423a</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0.26</CssParameter>
+              <CssParameter name="stroke-linejoin">bevel</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>Merchant</Name>
+          <Description>
+            <Title>Merchant</Title>
+          </Description>
+          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>profession</ogc:PropertyName>
+              <ogc:Literal>Merchant</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#8389f9</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0.26</CssParameter>
+              <CssParameter name="stroke-linejoin">bevel</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>Skilled Trade</Name>
+          <Description>
+            <Title>Skilled Trade</Title>
+          </Description>
+          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>profession</ogc:PropertyName>
+              <ogc:Literal>Skilled Trade</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#8fd8de</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0.26</CssParameter>
+              <CssParameter name="stroke-linejoin">bevel</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>Surveyor</Name>
+          <Description>
+            <Title>Surveyor</Title>
+          </Description>
+          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>profession</ogc:PropertyName>
+              <ogc:Literal>Surveyor</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#8dc68a</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0.26</CssParameter>
+              <CssParameter name="stroke-linejoin">bevel</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>Teacher</Name>
+          <Description>
+            <Title>Teacher</Title>
+          </Description>
+          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>profession</ogc:PropertyName>
+              <ogc:Literal>Teacher</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#dfd14e</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0.26</CssParameter>
+              <CssParameter name="stroke-linejoin">bevel</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>Undeclared</Name>
+          <Description>
+            <Title>Undeclared</Title>
+          </Description>
+          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>profession</ogc:PropertyName>
+              <ogc:Literal>Undeclared</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#e4a77b</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0.26</CssParameter>
+              <CssParameter name="stroke-linejoin">bevel</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>UnAllocated</Name>
+          <Description>
+            <Title>UnAllocated</Title>
+          </Description>
+          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>profession</ogc:PropertyName>
+              <ogc:Literal></ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#c7c7c7</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0.26</CssParameter>
+              <CssParameter name="stroke-linejoin">bevel</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+      </FeatureTypeStyle>
+    </UserStyle>
+  </NamedLayer>
+
+   <NamedLayer>
+    <Name>estateroads</Name>
+    <UserStyle>
+      <Name>estateroads</Name>
+      <FeatureTypeStyle>
+        <Rule>
+          <Name>Tarred</Name>
+          <Description>
+            <Title>Tarred</Title>
+          </Description>
+          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>status</ogc:PropertyName>
+              <ogc:Literal>Tarred</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#a7a7a7</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0.26</CssParameter>
+              <CssParameter name="stroke-linejoin">bevel</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>Earthen Surface</Name>
+          <Description>
+            <Title>Earthen Surface</Title>
+          </Description>
+          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>status</ogc:PropertyName>
+              <ogc:Literal>Earthen Surface</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#e0aa5f</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0.26</CssParameter>
+              <CssParameter name="stroke-linejoin">bevel</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+        <Rule>
+          <Name>Unconstructed</Name>
+          <Description>
+            <Title>Unconstructed</Title>
+          </Description>
+          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+            <ogc:PropertyIsEqualTo>
+              <ogc:PropertyName>status</ogc:PropertyName>
+              <ogc:Literal>Unconstructed</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+          </ogc:Filter>
+          <PolygonSymbolizer>
+            <Fill>
+              <CssParameter name="fill">#94dc93</CssParameter>
+            </Fill>
+            <Stroke>
+              <CssParameter name="stroke">#000000</CssParameter>
+              <CssParameter name="stroke-width">0.26</CssParameter>
+              <CssParameter name="stroke-linejoin">bevel</CssParameter>
+            </Stroke>
+          </PolygonSymbolizer>
+        </Rule>
+      </FeatureTypeStyle>
+    </UserStyle>
+  </NamedLayer>
+
+</sld:StyledLayerDescriptor>

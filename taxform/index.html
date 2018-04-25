@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!--MAP SCRIPTS
+<script src="http://maps.google.com/maps/api/js?v=3.2&sensor=false"></script>	-->
+<script src="http://dev.openlayers.org/releases/OpenLayers-2.13.1/OpenLayers.js"></script>
+
+
+	<meta charset="UTF-8">
+	<title>Tax Collector</title>
+ 	<!-- <meta http-equiv="REFRESH" content="1;url=http://map.corporealproperties.com.ng/AccountSuspended.htm">  -->
+	<!-- reponsive meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+
+	
+<link rel="stylesheet" href="http://dev.openlayers.org/releases/OpenLayers-2.13.1/theme/default/style.css" type="text/css">
+<link rel="stylesheet" href="http://dev.openlayers.org/releases/OpenLayers-2.13.1/theme/default/google.css" type="text/css">   
+<link rel="stylesheet" href="css/mapstyle.css" type="text/css">
+<link rel="stylesheet" href="CSS/form-basic.css">
+
+     
+</head>
+<body>
+
+<div id="map" class="map">
+<!--
+<div id="mapmenu"><span>Map Menu <br />
+<div class="mapmenu_wrapper" style="background: rgb(155,90,90)"><h6  onclick="myreginterest()">Register Interest</h6></div><br /> Colour Code by:
+<div class="mapmenu_wrapper" id="divplotStatus"><h6 onclick="plotsymbol('plotStatus')">Ownership/Completion Status</h6></div><br />
+<div class="mapmenu_wrapper" id="divplotProfession"><h6 onclick="plotsymbol('plotProfession')">Owner Proffesion</h6></div><br />
+<div class="mapmenu_wrapper"  id="divplotsLandUse"><h6 onclick="plotsymbol('plotsLandUse')">Land Use</h6></div><br />
+<div class="mapmenu_wrapper"><h6 onclick="showroad()">Show Developed Infrastructures</h6></div><br />
+</span></div>
+<div id="regmessage" style="display:none"><span>Click on the property you're interested in and fill your details in the pop-up that comes up</span></div>
+<div id="mlegend">
+<div id="plotStatus" style="display:none"><img src="img/StatusLegend.jpeg" alt="maplegend" title="Legend"></div>
+<div id="plotProfession" style="display:none"><img src="img/ProfLegend.jpeg" alt="maplegend" title="Legend"></div>
+<div id ="plotsLandUse"><img src="img/UseLegend.jpeg" alt="maplegend" title="Legend"></div>  
+<div id ="roads" style = "display:none"><img src="img/RoadLegend.jpeg" alt="roadlegend" title="Legend"></div>
+</div>   -->
+</div>
+
+  <!--<div class="col-sm-8"> 
+   <input type="submit" class="btn" value="Identify" onclick="enableSelect()"/>
+    <input type="submit" class="btn" value="Documents" onclick="statereload()"/>
+    <input type="submit" class="btn" value="Site Picture" onclick="statereload()"/>
+    <input type="submit" class="btn" value="Statistics" onclick="statereload()"/>
+  </div> 
+   <div class="col-sm-4"> 
+    <input type="submit" class="btn" value="Legend" onclick="toggleLegend()" style="position: absolute; right: 40px"/>      
+   </div> 
+-->
+
+<div class="main-content" id="buildprop" style="display:none">
+	<div class="row">
+		<div class="col-md-8">
+			<h3 class="pull-left">Businesses </h3>
+			<input type="button" value="Return Map" onclick="mreturn()" class="btn btn-success pull-right">
+			<input type="button" value="Add New Business" onclick="addnew()" class="btn btn-success pull-right">
+			<div id="busitable"></div>
+			<div id="submitmsg"></div>
+		</div>
+	</div>         
+</div>
+
+
+<div class="main-content" id="mainform" style="display:none">
+
+	<!-- You only need this form and the form-basic.css -->
+
+	<form class="form-basic" method="post" action="javascript:submitform()" id="busiform">
+			
+		<input type="hidden" value="add" name="action" id="action">
+		<input type="hidden" value="0" name="gid" id="gid">
+		<div class="form-row">
+			<label>
+				<span>Building ID</span>
+				<input type="text" name="bld_id">
+			</label>
+		</div>
+
+		<div class="form-row">
+			<label>
+				<span>Property ID</span>
+				<input type="text" name="ppty_id">
+			</label>
+		</div>
+
+		<div class="form-row">
+			<label>
+				<span>Property Use</span>
+				<select name="ppty_use">
+					<option>RESIDENTIAL</option>
+					<option>COMMERCIAL</option>
+					<option>INSTITUTIONAL</option>
+					<option>INDUSTRIAL</option>
+				</select>
+			</label>
+		</div>
+
+		<div class="form-row">
+			<label>
+				<span>Business Name</span>
+				<input type="text" name="businame" id="businame">
+			</label>
+		</div>
+
+		<div class="form-row">
+			<label>
+				<span>Business Type</span>
+				<input type="text" name="busitype" id="busitype">
+			</label>
+		</div>
+
+		<div class="form-row">
+			<label>
+				<span>Business Product</span>
+				<input type="text" name="busiprod" id="busiprod">
+			</label>
+		</div>
+
+		<div class="form-row">
+			<label>
+				<span>Business Registered Address</span>
+				<textarea name="busireg_st" id="busireg_st"></textarea>
+			</label>
+		</div>
+
+		<div class="form-row">
+			<label>
+				<span>Business Registration Number</span>
+				<input type="text" name="busi_regno" id="busi_regno">
+			</label>
+		</div>
+
+		<div class="form-row">
+			<label>
+				<span>Business Incorporation Year</span>
+				<input type="date" name="busi_inc_y">
+			</label>
+		</div>
+
+		<div class="form-row">
+				<input type="button" value="Pick Position on Map" onclick="clearControls()" />
+		</div>
+			<div class="form-row">
+				<label>
+					<span>X</span>
+					<input type="text" name="x">
+				</label>
+			</div>
+	
+			<div class="form-row">
+				<label>
+					<span>Y</span>
+					<input type="text" name="y">
+				</label>
+			</div>
+
+		<div class="form-row">
+			<label>
+				<span>Staff Strength</span>
+				<input type="text" name="staf_str">
+			</label>
+		</div>
+
+		<div class="form-row">
+			<label>
+				<span>Contact Number</span>
+				<input type="text" name="contact">
+			</label>
+		</div>
+
+		<div class="form-row">
+			<label>
+				<span>Tax Applicable</span>
+				<input type="text" name="tax_appli">
+			</label>
+		</div>
+		
+		<div class="form-row">
+			<label>
+				<span>TIN Status</span>
+				<input type="text" name="tin_status">
+			</label>
+		</div>
+
+		<div class="form-row">
+			<label>
+				<span>TIN Number</span>
+				<input type="text" name="tin_no">
+			</label>
+		</div>
+
+		<div class="form-row">
+			<label>
+				<span>Last Tax Amount Paid</span>
+				<input type="text" name="lt_amt_pd">
+			</label>
+		</div>
+		
+		<div class="form-row">
+			<label>
+				<span>Last Paid Date</span>
+				<input type="date" name="lt_pd_year">
+			</label>
+		</div>
+
+		<div class="form-row">
+			<label>
+				<span>Picture</span>
+				<input type="file" name="pic" accept="image/*">
+			</label>
+		</div>
+
+
+		<div class="form-row">
+			<button type="submit">Submit Business</button>
+		</div>
+
+	</form>
+
+</div>
+
+
+
+<script src="js/map.js"></script>
+
+</body>
+</html>
