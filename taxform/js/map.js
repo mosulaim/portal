@@ -348,4 +348,4 @@ document.getElementById("divplotsLandUse").setAttribute("class", "mapmenu_wrappe
 document.getElementById("divplotProfession").setAttribute("class", "mapmenu_wrapper");
 document.getElementById("divplotStatus").setAttribute("class", "mapmenu_wrapper");
 }
- document.getElementById("divplotsLandUse").setAttribute("class", "dhighlight");
+// document.getElementById("divplotsLandUse").setAttribute("class", "dhighlight");
