@@ -215,6 +215,18 @@ function updatebusi(bgid){
 			  $('#busitype').val(data.busitype);
 			  $('#busiprod').val(data.busiprod);
 			  $('#busireg_st').val(data.busireg_st);  
+
+			  $('#busi_regno').val(data.busi_regno);    
+			  $('#busi_inc_y').val(data.busi_inc_y);
+			  $('#staf_str').val(data.staf_str);
+			  $('#contact').val(data.contact);
+			  $('#tax_appli').val(data.tax_appli);    
+			  $('#tin_status').val(data.tin_status);
+			  $('#tin_no').val(data.tin_no);
+			  $('#lt_pd_year').val(data.lt_pd_year);
+			  $('#lt_amt_pd').val(data.lt_amt_pd);
+			  $('#x').val(data.x);
+			  $('#y').val(data.y);
 			 // $('#btn_add').html("Update");
 			 // $('#action').val("edit");   
 		 }  
