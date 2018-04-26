@@ -173,16 +173,19 @@ function clearControls() {
 	selectControl.deactivate();
 	mouse_select = true;
 	document.getElementById("map").style.display = "block";
+	document.getElementById("mreturn").style.display = "none";
 
 }
 function showform() {
 	document.getElementById("mainform").style.display = "inline";
 	document.getElementById("map").style.display = "none";
+	document.getElementById("mreturn").style.display = "inline";
 
 }
 function showmap() {
 	document.getElementById("mainform").style.display = "none";
 	document.getElementById("map").style.display = "block";
+	document.getElementById("mreturn").style.display = "none";
 	interestControl.activate();
 
 }
@@ -338,6 +341,7 @@ function handleMapClick(e) {
     var xcoord = xpos;
 	var ycoord = ypos;
 	document.getElementById("map").style.display = "none";
+	document.getElementById("mreturn").style.display = "inline";
 	mouse_select = false;
 	}
 	
