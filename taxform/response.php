@@ -45,14 +45,14 @@ class business {
   
   function getbusinesses() {
     $sql = "SELECT * FROM business";
-	$queryRecords = pg_query($this->conn, $sql) or die("error to fetch businesses data");
+	$queryRecords = pg_query($this->conn, $sql) or die("error fetching businesses data");
 	$data = pg_fetch_all($queryRecords);
 	echo json_encode($data);
   }
   
   function getbusiness($gid) {
     $sql = "SELECT * FROM business Where gid=".$gid;
-	$queryRecords = pg_query($this->conn, $sql) or die("error to fetch business data");
+	$queryRecords = pg_query($this->conn, $sql) or die("error fetching business data");
 	$data = pg_fetch_object($queryRecords);
 	echo json_encode($data);
   }
@@ -80,7 +80,7 @@ class business {
  $data['lt_pd_year'] = $_POST["lt_pd_year"];
  $data['lt_amt_pd'] = $_POST["lt_amt_pd"];
  
- $result = pg_insert($this->conn, 'business' , $data) or die("error to insert business data");
+ $result = pg_insert($this->conn, 'business' , $data) or die("Error inserting business data");
  
  
  $resp['status'] = true;
@@ -113,7 +113,7 @@ class business {
 		$data['lt_amt_pd'] = $_POST["lt_amt_pd"];
 		$data['gid'] = $_POST["gid"];
 		
-		$result = pg_update($this->conn, 'business' , $data, array('gid' => $data['gid'])) or die("error to insert business data");
+		$result = pg_update($this->conn, 'business' , $data, array('gid' => $data['gid'])) or die("Error updating business data");
 		
         $resp['status'] = true;
         $resp['Record'] = $data;
@@ -123,7 +123,7 @@ class business {
   
   function deletebusiness($gid) {
 	$sql = "Delete FROM business Where gid=".$gid;
-	$queryRecords = pg_query($this->conn, $sql) or die("error to fetch businesses data");
+	$queryRecords = pg_query($this->conn, $sql) or die("Error in delete operation");
 	if($queryRecords) {
 		echo true;
 	} else {

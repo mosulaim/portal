@@ -175,7 +175,6 @@ function clearControls() {
 	document.getElementById("map").style.display = "block";
 
 }
-
 function showform() {
 	document.getElementById("mainform").style.display = "inline";
 	document.getElementById("map").style.display = "none";
@@ -238,7 +237,7 @@ function submitform() {
 		
 	  },
 	  error: function(jqXHR, textStatus, errorThrown) {
-		  $('#submitmsg').html('<div class="alert alert-danger ">Error'+textStatus+'!'+errorThrown);
+		  $('#submitmsg').html('<div class="alert alert-danger ">Error returned: '+textStatus+'!'+errorThrown);
 		}  
 	});
 	showmap();
