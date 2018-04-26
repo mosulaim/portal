@@ -1,0 +1,25 @@
+heroku login
+heroku git:clone -a geostation
+cd geostation
+
+or
+heroku git:remote -a geostation
+
+heroku create
+git add .
+git commit -m "message";
+git push heroku master
+
+heroku pg:psql
+\copy business from 'business.csv' CSV HEADER;
+
+insert into tablename (id, name) values ('1','sulaiman');
+
+heroku apps:rename geostation
+
+to exit vim use Esc button then type \wq
+to list table in psql use \dt
+to quit psql use CTRL+C or \q
+
+
+postgres://nwcgrdzxnwjtkq:be6787b8cbe494c9cd270cea63fe236ab9f9829983adeeb326d42bf3d54d2360@ec2-50-16-196-238.compute-1.amazonaws.com:5432/de2415pt8s7mb8
