@@ -79,6 +79,8 @@ class business {
  $data['tin_no'] = $_POST["tin_no"];
  $data['lt_pd_year'] = $_POST["lt_pd_year"];
  $data['lt_amt_pd'] = $_POST["lt_amt_pd"];
+ $data['x'] = $_POST["x"];
+ $data['y'] = $_POST["y"];
  
  $result = pg_insert($this->conn, 'business' , $data) or die("Error inserting business data");
  
@@ -111,6 +113,8 @@ class business {
 		$data['tin_no'] = $_POST["tin_no"];
 		$data['lt_pd_year'] = $_POST["lt_pd_year"];
 		$data['lt_amt_pd'] = $_POST["lt_amt_pd"];
+		$data['x'] = $_POST["x"];
+		$data['y'] = $_POST["y"];
 		$data['gid'] = $_POST["gid"];
 		
 		$result = pg_update($this->conn, 'business' , $data, array('gid' => $data['gid'])) or die("Error updating business data");
