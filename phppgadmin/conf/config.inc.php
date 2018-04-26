@@ -29,7 +29,7 @@
 
 	// Change the default database only if you cannot connect to template1.
 	// For a PostgreSQL 8.1+ server, you can set this to 'postgres'.
-	$conf['servers'][0]['defaultdb'] = 'template1';
+	$conf['servers'][0]['defaultdb'] = 'de2415pt8s7mb8';
 
 	// Specify the path to the database dump utilities for this server.
 	// You can set these to '' if no dumper is available.
