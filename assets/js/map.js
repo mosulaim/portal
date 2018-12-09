@@ -8,7 +8,7 @@ var selectDockControl;
 var selectedDock;
 
 var statedata = 'nigeria.geojson';
-var incdata ='http://geostation.herokuapp.com/taxform/pdata.php?geotable=assets&key=' + Math.random();
+var incdata ='http://geostation.herokuapp.com/assets/pdata.php?geotable=assets&key=' + Math.random();
 
 var mapPanel, legendPanel;
 

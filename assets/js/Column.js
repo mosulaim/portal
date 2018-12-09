@@ -10,7 +10,7 @@ window.store1 = new Ext.data.Store({
     model: 'Details',
     proxy: {
         type: 'ajax',
-        url: 'votesinlagos.php',
+        url: 'http://geostation.herokuapp.com/assets/votesinlagos.php',
         reader: {
             root: 'data',
             type: 'json'
