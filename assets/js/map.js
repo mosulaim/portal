@@ -73,7 +73,7 @@ function initMap() {
         
   	// Load SLD.
 	OpenLayers.Request.GET({
-		url: "http://geostation.herokuapp.com/assets/sld/sld.xml",
+		url: "http://www.geostation.net/assets/sld/sld.xml",
 		success: sld_complete
 	});  
   
