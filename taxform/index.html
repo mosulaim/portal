@@ -59,7 +59,7 @@
 	<div class="row">
 		<div class="col-md-8">
 			<h3 class="pull-left">Businesses </h3>
-			<input type="button" value="Return Map" onclick="mreturn()" class="btn btn-success pull-right">
+			<input type="button" value="Return Map" onclick="mreturn()" id="mreturn" class="btn btn-success pull-right" style="display: none; margin-bottom: 10px; margin-left: 10px">
 			<input type="button" value="Add New Business" onclick="addnew()" class="btn btn-success pull-right">
 			<div id="busitable"></div>
 			<div id="submitmsg"></div>
@@ -140,7 +140,7 @@
 		<div class="form-row">
 			<label>
 				<span>Business Incorporation Year</span>
-				<input type="date" name="busi_inc_y">
+				<input type="date" name="busi_inc_y" id="busi_inc_y">
 			</label>
 		</div>
 
@@ -150,63 +150,63 @@
 			<div class="form-row">
 				<label>
 					<span>X</span>
-					<input type="text" name="x">
+					<input type="text" name="x" id="x">
 				</label>
 			</div>
 	
 			<div class="form-row">
 				<label>
 					<span>Y</span>
-					<input type="text" name="y">
+					<input type="text" name="y" id="y">
 				</label>
 			</div>
 
 		<div class="form-row">
 			<label>
 				<span>Staff Strength</span>
-				<input type="text" name="staf_str">
+				<input type="text" name="staf_str" id="staf_str">
 			</label>
 		</div>
 
 		<div class="form-row">
 			<label>
 				<span>Contact Number</span>
-				<input type="text" name="contact">
+				<input type="text" name="contact" id="contact">
 			</label>
 		</div>
 
 		<div class="form-row">
 			<label>
 				<span>Tax Applicable</span>
-				<input type="text" name="tax_appli">
+				<input type="text" name="tax_appli" id="tax_appli">
 			</label>
 		</div>
 		
 		<div class="form-row">
 			<label>
 				<span>TIN Status</span>
-				<input type="text" name="tin_status">
+				<input type="text" name="tin_status" id="tin_status">
 			</label>
 		</div>
 
 		<div class="form-row">
 			<label>
 				<span>TIN Number</span>
-				<input type="text" name="tin_no">
+				<input type="text" name="tin_no" id="tin_no">
 			</label>
 		</div>
 
 		<div class="form-row">
 			<label>
 				<span>Last Tax Amount Paid</span>
-				<input type="text" name="lt_amt_pd">
+				<input type="text" name="lt_amt_pd" id="lt_amt_pd">
 			</label>
 		</div>
 		
 		<div class="form-row">
 			<label>
 				<span>Last Paid Date</span>
-				<input type="date" name="lt_pd_year">
+				<input type="date" name="lt_pd_year" id="lt_pd_year">
 			</label>
 		</div>
 

@@ -8,7 +8,7 @@ Class dbObj{
     var $port = "5434";
     var $conn;
     function getConnstring() {
-                    $con = pg_connect("host=".$this->servername." port=".$this->port." dbname=".$this->dbname." user=".$this->username." password=".$this->password."") or die("Connection failed: ".pg_last_error());
+        $con = pg_connect(getenv("DATABASE_URL")) or die("Connection failed: ".pg_last_error());
 
                     /* check connection */
                     if (pg_last_error()) {
