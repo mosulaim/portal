@@ -67,7 +67,7 @@ var vlayer = new OpenLayers.Layer.Vector( "Editable" );
             
   	// Load SLD.
 	OpenLayers.Request.GET({
-		url: "http://geostation.herokuapp.com/taxform/sld/sld.xml",
+		url: "http://www.geostation.net/taxform/sld/sld.xml",
 		success: sld_complete
 	});  
   
@@ -173,19 +173,17 @@ function clearControls() {
 	selectControl.deactivate();
 	mouse_select = true;
 	document.getElementById("map").style.display = "block";
-	document.getElementById("mreturn").style.display = "none";
 
 }
+
 function showform() {
 	document.getElementById("mainform").style.display = "inline";
 	document.getElementById("map").style.display = "none";
-	document.getElementById("mreturn").style.display = "inline";
 
 }
 function showmap() {
 	document.getElementById("mainform").style.display = "none";
 	document.getElementById("map").style.display = "block";
-	document.getElementById("mreturn").style.display = "none";
 	interestControl.activate();
 
 }
@@ -215,18 +213,6 @@ function updatebusi(bgid){
 			  $('#busitype').val(data.busitype);
 			  $('#busiprod').val(data.busiprod);
 			  $('#busireg_st').val(data.busireg_st);  
-
-			  $('#busi_regno').val(data.busi_regno);    
-			  $('#busi_inc_y').val(data.busi_inc_y);
-			  $('#staf_str').val(data.staf_str);
-			  $('#contact').val(data.contact);
-			  $('#tax_appli').val(data.tax_appli);    
-			  $('#tin_status').val(data.tin_status);
-			  $('#tin_no').val(data.tin_no);
-			  $('#lt_pd_year').val(data.lt_pd_year);
-			  $('#lt_amt_pd').val(data.lt_amt_pd);
-			  $('#x').val(data.x);
-			  $('#y').val(data.y);
 			 // $('#btn_add').html("Update");
 			 // $('#action').val("edit");   
 		 }  
@@ -252,7 +238,7 @@ function submitform() {
 		
 	  },
 	  error: function(jqXHR, textStatus, errorThrown) {
-		  $('#submitmsg').html('<div class="alert alert-danger ">Error returned: '+textStatus+'!'+errorThrown);
+		  $('#submitmsg').html('<div class="alert alert-danger ">Error'+textStatus+'!'+errorThrown);
 		}  
 	});
 	showmap();
@@ -353,7 +339,6 @@ function handleMapClick(e) {
     var xcoord = xpos;
 	var ycoord = ypos;
 	document.getElementById("map").style.display = "none";
-	document.getElementById("mreturn").style.display = "inline";
 	mouse_select = false;
 	}
 	
@@ -364,4 +349,4 @@ document.getElementById("divplotsLandUse").setAttribute("class", "mapmenu_wrappe
 document.getElementById("divplotProfession").setAttribute("class", "mapmenu_wrapper");
 document.getElementById("divplotStatus").setAttribute("class", "mapmenu_wrapper");
 }
-// document.getElementById("divplotsLandUse").setAttribute("class", "dhighlight");
+ document.getElementById("divplotsLandUse").setAttribute("class", "dhighlight");
