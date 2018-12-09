@@ -269,12 +269,12 @@ function onDockUnselect(feature) {
 function getReport() {
   
 	var endpoint;
-	var handler = "inctable.php";
+	var handler = "http://geostation.herokuapp.com/polity/inctable.php";
 
  	if (document.getElementById("vote_list").checked) 
- 		handler = "anytable.php?geotable=statevote";
+ 		handler = "http://geostation.herokuapp.com/polity/anytable.php?geotable=statevote";
  	if (document.getElementById("leading_p").checked) 
- 		handler = "anytable.php?geotable=stateelect&fields=gid,state,party";
+ 		handler = "http://geostation.herokuapp.com/polity/anytable.php?geotable=stateelect&fields=gid,state,party";
 // 	if (document.getElementById("tot_stat_district").checked) 
 // 		handler = "dstnperdistr.pl";
 

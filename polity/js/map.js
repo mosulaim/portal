@@ -8,7 +8,7 @@ var selectDockControl;
 var selectedDock;
 
 var statedata = 'nigeria.geojson';
-var incdata ='pdata.php?geotable=electionevent&key=' + Math.random();
+var incdata ='http://geostation.herokuapp.com/taxform/pdata.php?geotable=electionevent&key=' + Math.random();
 
 var mapPanel, legendPanel;
 
@@ -24,6 +24,15 @@ function initMap() {
 	map = new OpenLayers.Map('mapcontainer-body', {allOverlays: true});
 	map.addControl(new OpenLayers.Control.LayerSwitcher());
 
+	// Create mapbox basemap
+	var mbox = new OpenLayers.Layer.XYZ(
+		'Street Base',
+		['https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/256/${z}/${x}/${y}?access_token=pk.eyJ1IjoibW9zdWxhaW0iLCJhIjoiY2pnNWI0dnU5MGNpYjJxcm5hcmFhd2V3bSJ9.wFuvx6_m8xxdHtavOTMFXA'],
+		{
+		  sphericalMercator: true,
+		  wrapDateLine: true
+		}
+	  );
 
 	// Create Google basemap layers.
 	var gmap = new OpenLayers.Layer.Google(
@@ -64,15 +73,15 @@ function initMap() {
         
   	// Load SLD.
 	OpenLayers.Request.GET({
-		url: "http://portal-geomos.1d35.starter-us-east-1.openshiftapps.com/polity/sld/sld.xml",
+		url: "http://geostation.herokuapp.com/polity/sld/sld.xml",
 		success: sld_complete
 	});  
   
 	// Add all layers to the map.
-	map.addLayers([gmap, gsat, gphy, ghyb, nigstates, electevent]);
+	map.addLayers([mbox, nigstates, electevent]);
 
-	gmap.setVisibility(true);
-	gsat.setVisibility(false);
+	mbox.setVisibility(true);
+	//gsat.setVisibility(false);
 
 	// Google.v3 uses EPSG:900913 as projection, so we have to
 	// transform our coordinates
