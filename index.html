@@ -1,259 +1,779 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Welcome to Sulaiman GIS GeoStation</title>
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>GeoStation by Sulaiman Mosuro</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="author" content="" />
 
-<style>
-/*!
- * Bootstrap v3.0.0
- *
- * Copyright 2013 Twitter, Inc
- * Licensed under the Apache License v2.0
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Designed and built with all the love in the world @twitter by @mdo and @fat.
- */
-  .logo {
-    background-size: cover;
-    height: 58px;
-    width: 300px;
-    margin-top: 6px;
-    background-image: url(./images/sulgis.jpg);
-  }
-.logo a {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-*, *:before, *:after {
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-aside,
-footer,
-header,
-hgroup,
-section{
-  display: block;
-}
-body {
-  color: #404040;
-  font-family: "Helvetica Neue",Helvetica,"Liberation Sans",Arial,sans-serif;
-  font-size: 14px;
-  line-height: 1.4;
-}
-html {
-  font-family: sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
-ul {
-    margin-top: 0;
-}
-.container {
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-.container:before,
-.container:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
-}
-.container:after {
-  clear: both;
-}
-.row {
-  margin-left: -15px;
-  margin-right: -15px;
-}
-.row:before,
-.row:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
-}
-.row:after {
-  clear: both;
-}
-.col-sm-6, .col-md-6, .col-xs-12 {
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-.col-xs-12 {
-  width: 100%;
-}
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-  .col-sm-6 {
-    float: left;
-  }
-  .col-sm-6 {
-    width: 50%;
-  }
-}
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-  .col-md-6 {
-    float: left;
-  }
-  .col-md-6 {
-    width: 50%;
-  }
-}
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
-}
-a {
-  color: #069;
-  text-decoration: none;
-}
-a:hover {
-  color: #EA0011;
-  text-decoration: underline;
-}
-hgroup {
-  margin-top: 10px;
-}
-footer {
-    margin: 50px 0 25px;
-}
-h1, h2, h3 {
-  color: #000;
-  line-height: 1.38em;
-  margin: 1.5em 0 .3em;
-}
-h1 {
-  font-size: 25px;
-  font-weight: 300;
-  border-bottom: 1px solid #fff;
-  margin-bottom: .5em;
-}
-h1:after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 1px;
-  background-color: #ddd;
-}
-h2 {
-  font-size: 19px;
-  font-weight: 400;
-}
-h3 {
-  font-size: 15px;
-  font-weight: 400;
-  margin: 0 0 .3em;
-}
-p {
-  margin: 0 0 2em;
-}
-p + h2 {
-  margin-top: 2em;
-}
-html {
-  background: #f5f5f5;
-  height: 100%;
-}
-code {
-  background-color: white;
-  border: 1px solid #ccc;
-  padding: 1px 5px;
-  color: #888;
-}
-pre {
-  display: block;
-  padding: 13.333px 20px;
-  margin: 0 0 20px;
-  font-size: 13px;
-line-height: 1.4;
-  background-color: #fff;
-  border-left: 2px solid rgba(120,120,120,0.35);
-  white-space: pre;
-  white-space: pre-wrap;
-  word-break: normal;
-  word-wrap: break-word;
-  overflow: auto;
-  font-family: Menlo,Monaco,"Liberation Mono",Consolas,monospace !important;
-}
-</style>
+  <!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
 
-</head>
-<body>
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="css/flexslider.css">
+	<!-- Flaticons  -->
+	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+	<body>
+	<div id="colorlib-page">
+		<div class="container-wrap">
+		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+		<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
+			<div class="text-center">
+				<div class="author-img" style="background-image: url(images/about.jpg);"></div>
+				<h1 id="colorlib-logo"><a href="index.html">Sulaiman Mosuro</a></h1>
+				<span class="position"><a href="#">GIS Developer/Geomatics Specialist</a></span>
+			</div>
+			<nav id="colorlib-main-menu" role="navigation" class="navbar">
+				<div id="navbar" class="collapse">
+					<ul>
+						<li class="active"><a href="#" data-nav-section="home">Home</a></li>
+						<li><a href="#" data-nav-section="about">About</a></li>
+						<li><a href="#" data-nav-section="services">Services</a></li>
+						<li><a href="#" data-nav-section="work">Works</a></li>
+						<li><a href="#" data-nav-section="skills">Skills</a></li>
+						<li><a href="#" data-nav-section="education">Education</a></li>
+						<li><a href="#" data-nav-section="experience">Experience</a></li>
+						<li><a href="#" data-nav-section="blog">Blog</a></li>
+						<li><a href="#" data-nav-section="contact">Contact</a></li>
+					</ul>
+				</div>
+			</nav>
+			<div class="text-center">
+					<a href="https://www.facebook.com/sulaiman.mosuro" target="_blank"><i class="icon-facebook2"></i></a>
+					<a href="http://github.com/mosulaim" target="_blank"><i class="icon-github"></i></a>
+					<a href="https://www.geos.ed.ac.uk/~mscgis/11-12/s1062870" target="_blank"><i class="icon-briefcase3"></i></a>
+					<a href="#contact"><i class="icon-phone3"></i></a>
+					<a href="http://linkedin.com/in/sulaimanmosuro" target="_blank"><i class="icon-linkedin2"></i></a>
+			</div>
+		</aside>
+
+		<div id="colorlib-main">
+			<section id="colorlib-hero" class="js-fullheight" data-section="home">
+				<div class="flexslider js-fullheight">
+					<ul class="slides">
+				   	<li style="background-image: url(images/home.jpg);">
+				   		<div class="overlay"></div>
+				   		<div class="container-fluid">
+				   			<div class="row">
+					   			<div class="col-md-8 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
+					   				<div class="slider-text-inner js-fullheight">
+					   					<div class="desc">
+											   <h1>Welcome, <br>This is</h1>
+											   <img src="images/geostation.jpg">
+											   <h2>The GIS hub maintained by <strong>Sulaiman Mosuro</strong> for hosting geo-portal services and showcasing his works, skills, portfolio and developed applications. <br> Sulaiman is an Experienced <strong>GIS Project Manager, GIS Developer and Geomatics Specialist.</strong></h2>
+												<p><a class="btn btn-primary btn-learn" href="#services">View Portfolio <i class="icon-briefcase3"></i></a><a class="btn btn-primary btn-learn" href="sulaimancv.pdf" download="">Download Sulaiman's CV <i class="icon-download4"></i></a></p>
+										</div>
+					   				</div>
+					   			</div>
+					   		</div>
+				   		</div>
+				   	</li>
+<!-- 				   	<li style="background-image: url(images/img_bg_2.jpg);">
+				   		<div class="overlay"></div>
+				   		<div class="container-fluid">
+				   			<div class="row">
+					   			<div class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
+					   				<div class="slider-text-inner">
+					   					<div class="desc">
+						   					<h1>I am <br>a Designer</h1>
+												<h2>100% html5 bootstrap templates Made by <a href="https://colorlib.com/" target="_blank">colorlib.com</a></h2>
+												<p><a class="btn btn-primary btn-learn">View Portfolio <i class="icon-briefcase3"></i></a></p>
+											</div>
+					   				</div>
+					   			</div>
+					   		</div>
+				   		</div>
+				   	</li> -->	
+				  	</ul>
+			  	</div>
+			</section>
+
+			<section class="colorlib-about" data-section="about">
+				<div class="colorlib-narrow-content">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
+								<div class="col-md-12">
+									<div class="about-desc">
+										<span class="heading-meta">About Us</span>
+										<h2 class="colorlib-heading">Who Am I?</h2>
+										<p><strong>Hi, I'm Sulaiman Mosuro.</strong> I provide Geospatial solutions and services with over a decade of work experience in the field of GIS, Geomatics, Application Development, Project Management and Database Administration, a MSc. in GIS from the University of Edinburgh and an ESRI SAG award in ArcGIS Server administration, I possess a strong technical competence on the utility of GIS in corporate decision support and strategic development. I employ my adept Automation Programming, Application Development and Database Management skills to deliver intuitive knowledge-based solutions fostering effective resource management and process automation.</p>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
+									<div class="services color-1">
+										<span class="icon2"><i class="icon-briefcase3"></i></span>
+										<h3>Geomatics Specialist</h3>
+									</div>
+								</div>
+								<div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
+									<div class="services color-2">
+										<span class="icon2"><i class="icon-globe-outline"></i></span>
+										<h3>Enterprise GIS Professional</h3>
+									</div>
+								</div>
+								<div class="col-md-3 animate-box" data-animate-effect="fadeInTop">
+									<div class="services color-3">
+										<span class="icon2"><i class="icon-data"></i></span>
+										<h3>Software Programmer</h3>
+									</div>
+								</div>
+								<div class="col-md-3 animate-box" data-animate-effect="fadeInBottom">
+									<div class="services color-4">
+										<span class="icon2"><i class="icon-phone3"></i></span>
+										<h3>Mobile Apps Develper</h3>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+									<div class="hire">
+										<h2>I have completed upward of <br>40 projects sucessfully!</h2>
+										<a href="#contact" class="btn-hire">Hire me</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 
 
-<section class='container'>
-<img src="./images/sulgis.jpg">
-          <hgroup>
-            <h1>Welcome to Sulaiman Mosuro's GIS hub!</h1>
-          </hgroup>
+			
+			<section class="colorlib-services" data-section="services" id="services">
+				<div class="colorlib-narrow-content">
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+							<span class="heading-meta">What I do?</span>
+							<h2 class="colorlib-heading">Here are some of my expertise</h2>
+						</div>
+					</div>
+					<div class="row row-pt-md">
+					<div class="col-md-4 text-center animate-box">
+							<div class="services color-2">
+								<span class="icon">
+									<i class="icon-data"></i>
+								</span>
+								<div class="desc">
+									<h3>GIS Software</h3>
+									<p>Versatile in the use of various GIS Packages including ArcGIS, Hexagon Suites, MapInfo and Geomedia</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-4 text-center animate-box">
+							<div class="services color-1">
+								<span class="icon">
+									<i class="icon-bulb"></i>
+								</span>
+								<div class="desc">
+									<h3>Innovative Ideas</h3>
+									<p>Strong analytical & innovative mind, enthusiastic to research, effective leadership, team & time management skills</p>
+								</div>
+							</div>
+						</div>
+					
+						<div class="col-md-4 text-center animate-box">
+							<div class="services color-3">
+								<span class="icon">
+									<i class="icon-phone3"></i>
+								</span>
+								<div class="desc">
+									<h3>Web GIS Developer</h3>
+									<p>Adept in PHP, Perl, HTML, JavaScript, Angular,
+											Node, jQuery, Bootstrap, CSS, Leaflet, Mapbox, GeoServer, GeoExt & OpenLayers</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 text-center animate-box">
+							<div class="services color-4">
+								<span class="icon">
+									<i class="icon-layers2"></i>
+								</span>
+								<div class="desc">
+									<h3>CAD Drafting & Geomatics Specialist</h3>
+									<p>Highly skilled at drafting in AutoCAD Civil 3D, Competent in Field Survey & Survey data processing by Least Squares adjustment using Leica GeoOffice and Microsearch Geolab </p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 text-center animate-box">
+							<div class="services color-5">
+								<span class="icon">
+									<i class="icon-data"></i>
+								</span>
+								<div class="desc">
+									<h3>Desktop Software Programming</h3>
+									<p>Adeptness in programming on Java, Visual Basic, Visual Studio .NET and Python with specialty in
+											applications automation and customization programming (including ArcObjects)</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 text-center animate-box">
+							<div class="services color-6">
+								<span class="icon">
+									<i class="icon-phone3"></i>
+								</span>
+								<div class="desc">
+									<h3>Mobile Applications</h3>
+									<p>Competent in mobile application development on the Android SDK and React Native</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<div id="colorlib-counter" class="colorlib-counters" style="background-image: url(images/cover_bg_1.jpg);" data-stellar-background-ratio="0.5">
+				<div class="overlay"></div>
+				<div class="colorlib-narrow-content">
+					<div class="row">
+					</div>
+					<div class="row">
+						<div class="col-md-3 text-center animate-box">
+							<span class="colorlib-counter js-counter" data-from="0" data-to="42" data-speed="5000" data-refresh-interval="50"></span>
+							<span class="colorlib-counter-label">GIS Solutions</span>
+						</div>
+						<div class="col-md-3 text-center animate-box">
+							<span class="colorlib-counter js-counter" data-from="0" data-to="36" data-speed="5000" data-refresh-interval="50"></span>
+							<span class="colorlib-counter-label">Projects</span>
+						</div>
+						<div class="col-md-3 text-center animate-box">
+							<span class="colorlib-counter js-counter" data-from="0" data-to="28" data-speed="5000" data-refresh-interval="50"></span>
+							<span class="colorlib-counter-label">Clients</span>
+						</div>
+						<div class="col-md-3 text-center animate-box">
+							<span class="colorlib-counter js-counter" data-from="0" data-to="68" data-speed="5000" data-refresh-interval="50"></span>
+							<span class="colorlib-counter-label">Skill Sets</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<section class="colorlib-work" data-section="work">
+				<div class="colorlib-narrow-content">
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+							<span class="heading-meta">My Work</span>
+							<h2 class="colorlib-heading animate-box">Work Gallery</h2>
+						</div>
+					</div>
+					<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
+						<div class="col-md-12">
+							<p class="work-menu"><span><a href="#" class="active">Web GIS Applications</a></span> <span><a href="#">Mobile Enumeration Apps</a></span> <span><a href="#">Desktop Software</a></span> <span><a href="#">Cloud Deployments</a></span></p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+							<div class="project" style="background-image: url(images/tax.jpg);">
+								<div class="desc">
+									<div class="con">
+										<h3><a href="http://tax.geostation.net">Tax Monitoring Solution</a></h3>
+										<span>Website</span>
+										<p class="icon">
+											<span><a href="#"><i class="icon-share3"></i></a></span>
+											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
+											<span><a href="#"><i class="icon-heart"></i> 49</a></span>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+							<div class="project" style="background-image: url(images/assets.jpg);">
+								<div class="desc">
+									<div class="con">
+										<h3><a href="http://www.geostation.net/assets">Assets Management</a></h3>
+										<span>Animation</span>
+										<p class="icon">
+											<span><a href="#"><i class="icon-share3"></i></a></span>
+											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
+											<span><a href="#"><i class="icon-heart"></i> 49</a></span>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 animate-box" data-animate-effect="fadeInTop">
+							<div class="project" style="background-image: url(images/polity.png);">
+								<div class="desc">
+									<div class="con">
+										<h3><a href="http://polityng.herokuapp.com">Election Result Collation</a></h3>
+										<span>Illustration</span>
+										<p class="icon">
+											<span><a href="#"><i class="icon-share3"></i></a></span>
+											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
+											<span><a href="#"><i class="icon-heart"></i> 49</a></span>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 animate-box" data-animate-effect="fadeInBottom">
+							<div class="project" style="background-image: url(images/electmon.jpg);">
+								<div class="desc">
+									<div class="con">
+										<h3><a href="http://www.geostation.net/polity">Incident Monitoring</a></h3>
+										<span>Application</span>
+										<p class="icon">
+											<span><a href="#"><i class="icon-share3"></i></a></span>
+											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
+											<span><a href="#"><i class="icon-heart"></i> 49</a></span>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+							<div class="project" style="background-image: url(images/taxcollect.jpg);">
+								<div class="desc">
+									<div class="con">
+										<h3><a href="#">Tax Collection Mobile App</a></h3>
+										<span>Graphic, Logo</span>
+										<p class="icon">
+											<span><a href="#"><i class="icon-share3"></i></a></span>
+											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
+											<span><a href="#"><i class="icon-heart"></i> 49</a></span>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+							<div class="project" style="background-image: url(images/incident.jpg);">
+								<div class="desc">
+									<div class="con">
+										<h3><a href="#">Incident Reporting App</a></h3>
+										<span>Web Design</span>
+										<p class="icon">
+											<span><a href="#"><i class="icon-share3"></i></a></span>
+											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
+											<span><a href="#"><i class="icon-heart"></i> 49</a></span>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 animate-box">
+							<p><a href="#" class="btn btn-primary btn-lg btn-load-more">Load more <i class="icon-reload"></i></a></p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="colorlib-skills" data-section="skills">
+				<div class="colorlib-narrow-content">
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+							<span class="heading-meta">My Specialty</span>
+							<h2 class="colorlib-heading animate-box">My Skills</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+							<p>I possess profound Programming and SQL skills. I employ a mix of technologies including PHP, NodeJS, Angular, Javascript, HTML5, Python, PostgreSQL, POSTGIS, ASP.NET, CSS, Perl, GeoServer (employing jQuery and OpenLayers), Leaflet, Mapbox, Cesium 3D, MongoDB and Oracle as well as ESRI ArcGIS Server, Portal and Online offerings. I develop custom automation applications for GIS and CAD task execution using Visual Basic, ArcObjects programming and Python scripting. I also develop android mobile applications for field data collection, event reporting, submitting data to online databases and disseminating time-series information as overlay maps, dynamic charts and textual data using Java, Android SDK and React Native. I am a qualified and licensed Land Surveyor and Geomatics Specialist with sound skills in field and aerial survey equipment use. I am equally competent in various mapping, drafting and GIS packages including ArcGIS, FME, Intergraph suite, AutoCAD Civil 3D etc.</p>
+						</div>
+						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+								<div class="progress-wrap">
+									<h3>ArcGIS Desktop & Enterprise</h3>
+									<div class="progress">
+										 <div class="progress-bar color-1" role="progressbar" aria-valuenow="100"
+										  aria-valuemin="0" aria-valuemax="100" style="width:100%">
+										<span>100%</span>
+										  </div>
+									</div>
+								</div>
+							</div>
+						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+							<div class="progress-wrap">
+								<h3>HTML, CSS & Javascript</h3>
+								<div class="progress">
+								 	<div class="progress-bar color-2" role="progressbar" aria-valuenow="95"
+								  	aria-valuemin="0" aria-valuemax="100" style="width:95%">
+								    <span>95%</span>
+								  	</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+							<div class="progress-wrap">
+								<h3>Java, Angular & Node</h3>
+								<div class="progress">
+								 	<div class="progress-bar color-3" role="progressbar" aria-valuenow="73"
+								  	aria-valuemin="0" aria-valuemax="100" style="width:73%">
+								    <span>73%</span>
+								  	</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+								<div class="progress-wrap">
+									<h3>Field Survey & AutoCAD Civil 3D Drafting</h3>
+									<div class="progress">
+										 <div class="progress-bar color-4" role="progressbar" aria-valuenow="90"
+										  aria-valuemin="0" aria-valuemax="100" style="width:90%">
+										<span>90%</span>
+										  </div>
+									</div>
+								</div>
+							</div>
+						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+							<div class="progress-wrap">
+								<h3>PostgreSQL, POSTGIS & Oracle</h3>
+								<div class="progress">
+								 	<div class="progress-bar color-5" role="progressbar" aria-valuenow="85"
+								  	aria-valuemin="0" aria-valuemax="100" style="width:85%">
+								    <span>85%</span>
+								  	</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+							<div class="progress-wrap">
+								<h3>Python, VB, Android SDK & React Native</h3>
+								<div class="progress">
+								 	<div class="progress-bar color-6" role="progressbar" aria-valuenow="85"
+								  	aria-valuemin="0" aria-valuemax="100" style="width:85%">
+								    <span>85%</span>
+								  	</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="colorlib-education" data-section="education">
+				<div class="colorlib-narrow-content">
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+							<span class="heading-meta">Education</span>
+							<h2 class="colorlib-heading animate-box">Education</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+							<div class="fancy-collapse-panel">
+								<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+									<div class="panel panel-default">
+									    <div class="panel-heading" role="tab" id="headingOne">
+									        <h4 class="panel-title">
+									            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+													Masters Degree in Geographical Information Science
+									            </a>
+									        </h4>
+									    </div>
+									    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+									         <div class="panel-body">
+													<h4>University of Edinburgh <span class="pull-right">United Kingdom, Sept 2011-Aug 2012</span></h4>
+													<p>Dissertation Research focus on Flood Modelling, flow hydraulics analysis, Infrastructure vulnerability
+															studies, android mobile warning dissemination and event assessment, guiding urban planning,
+															mitigation, response and relief strategy</p>
+													<p>Modules include: Spatial Database Modelling (Oracle); Spatio-Temporal, Geostatistical and Cluster
+															Analysis; Geovisualization; Object-Oriented Spatial Algorithms; Distributed GIS; Remote Sensing,
+															Image Processing and Water Resource Management</p>
+									         </div>
+									    </div>
+									</div>
+									<div class="panel panel-default">
+									    <div class="panel-heading" role="tab" id="headingTwo">
+									        <h4 class="panel-title">
+									            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+													B.Sc. in Surveying and Geoinformatics Engineering
+									            </a>
+									        </h4>
+									    </div>
+									    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+									        <div class="panel-body">
+												<h4>University of Lagos <span class="pull-right">Lagos, Nigeria, 2002-2007</span></h4>
+												<p>Second Class Upper Division</p>
+									        </div>
+									    </div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="colorlib-experience" data-section="experience">
+				<div class="colorlib-narrow-content">
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+							<span class="heading-meta">Experience</span>
+							<h2 class="colorlib-heading animate-box">Work Experience</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+				         <div class="timeline-centered">
+					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
+					            <div class="timeline-entry-inner">
+
+					               <div class="timeline-icon color-1">
+					                  <i class="icon-pen2"></i>
+					               </div>
+
+					               <div class="timeline-label">
+									  <h2><a href="#">R & D Head / Enterprise GIS Developer</a> <span>2017-Date</span></h2>
+									  <h4>Interspatial Technologies Limited</h4>
+					                  <p>Developing cloud based GIS solutions for Land administration, Monitoring and Reporting Geospatial Plationms. Leading R&D Team while exploring new technologies</p>
+					               </div>
+					            </div>
+					         </article>
 
 
-        <div class="row">
-          <section class='col-xs-12 col-sm-6 col-md-6'>
-            <section>
-              <h2>Map is our Language. Map Works!</h2>
-			   <h3>Take a look at my Election Monitor</h3>
-                <p>Nigeria's Elections <a href="http://polity.geostation.net">See here</a> </p>
-				<p><a href="http://polity.geostation.net"><img src="./polity/img/sulmaps.png" alt="Elections" /></a> </p>
+					         <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
+					            <div class="timeline-entry-inner">
+					               <div class="timeline-icon color-2">
+					                  <i class="icon-pen2"></i>
+					               </div>
+					               <div class="timeline-label">
+					               	<h2><a href="#">GIS Project Manager and Enterprise GIS Administrator</a> <span>2012-Date</span></h2>
+					                  <p>Responsible for managing a slew of GIS Projects being implemented for clients including State & Federal Government. Managing and deploying Oracle Databases, Web GIS Platforms using ESRI Server Offerings and overseeing personnel responsibilities</p>
+					               </div>
+					            </div>
+					         </article>
 
-                <h3>Do more with Analyses</h3>
-                <p>Some text here</p>
+					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
+					            <div class="timeline-entry-inner">
+					               <div class="timeline-icon color-3">
+					                  <i class="icon-pen2"></i>
+					               </div>
+					               <div class="timeline-label">
+					               	<h2><a href="#">Registered Land Surveyor</a> <span>2013-Date</span></h2>
+					                  <p>Registered with the Surveyors Council as Land Surveyor able to practise in Nigeria. Leading the Geomatics Team and supervising survey projects. Lead Trainer on Leica Survey Equipment, processing platforms and AutoCAD Civil 3D drafting.</p>
+					               </div>
+					            </div>
+					         </article>
 
-<pre> GIS involves Maps codes , databases and more.
-But more importantly, it helps answer real live questions
-Like Knowing the best place to situate a retail store for optimum coverage</pre>
+					         <article class="timeline-entry animate-box" data-animate-effect="fadeInTop">
+					            <div class="timeline-entry-inner">
+					               <div class="timeline-icon color-4">
+					                  <i class="icon-pen2"></i>
+					               </div>
+					               <div class="timeline-label">
+					               	<h2><a href="#">Geomatics Specialist at Interspatial</a> <span>2008-2011</span></h2>
+					                  <p>Partook in Mapping and Aerial Photography of Lagos State conducting Aero-Triangulation and Feature ollection on Intergraph ImageStation Suite. Geodetic Control establishment using Leica GPS and Data Processing in Leica GeoOffice. Drafting and digital conversion of spatial data using applications I developed.</p>
+					               </div>
+					            </div>
+					         </article>
 
+					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
+					            <div class="timeline-entry-inner">
+					               <div class="timeline-icon color-5">
+					                  <i class="icon-pen2"></i>
+					               </div>
+					               <div class="timeline-label">
+					               	<h2><a href="#">Consultant GIS Developer at DPR</a> <span>Feb-March 2008</span></h2>
+					                  <p>Developing GIS automation Tools for the Department of Petroleum Resources.</p>
+					               </div>
+					            </div>
+					         </article>
 
-                  <ul>
-                    <li><a href="http://www.esri.com">Learn more about leading software</a></li>
-                    <li><a href="http://maps.google.com">Explore maps the world over</a></li>
-                  </ul>
-            </section>
+					         <article class="timeline-entry begin animate-box" data-animate-effect="fadeInBottom">
+					            <div class="timeline-entry-inner">
+					               <div class="timeline-icon color-none">
+					               </div>
+					            </div>
+					         </article>
+					      </div>
+					   </div>
+				   </div>
+				</div>
+			</section>
 
-          </section>
-          <section class="col-xs-12 col-sm-6 col-md-6">
+			<section class="colorlib-blog" data-section="blog">
+				<div class="colorlib-narrow-content">
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+							<span class="heading-meta">Read</span>
+							<h2 class="colorlib-heading">Recent Blog</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
+							<div class="blog-entry">
+								<a href="blog.html" class="blog-img"><img src="images/traffic.jpg" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
+								<div class="desc">
+									<span><small>Sept 14, 2018 </small> | <small> GIS for Transport </small> | <small> <i class="icon-bubble3"></i> 4</small></span>
+									<h3><a href="blog.html">WHAT SMARTER WAYS TO BEAT THE TRAFFIC?</a></h3>
+									<p>Phew! Who doesn’t hate getting held up in a grueling traffic. Spending time in traffic lock jams can be quite onerous and exhausting. Hence finding ways to employ smart technologies to avoid these traffic situations is always welcome. Thankfully there are quite a few smart technologies that can help people get around traffic situations or even help avoid the presence of traffic altogether. Many of these technologies revolve around Geographical Information Systems. After all, the dilemma on the quickest way to get from position A to B is in fact a geographic problem.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInRight">
+							<div class="blog-entry">
+								<a href="blog.html" class="blog-img"><img src="images/landtitle.jpg" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
+								<div class="desc">
+									<span><small>Jan 06, 2019 </small> | <small> Land Titling </small> | <small> <i class="icon-bubble3"></i> 4</small></span>
+									<h3><a href="blog.html">WHAT YOU SHOULD KNOW BEFORE PAYING FOR THAT PROPERTY</a></h3>
+									<p>Investment in property has been known to be a good business choice especially in urbanized locations. Besides, individual goals often include the desire to build homes to inhabit and raise families. Acquiring a property however commences with finding a desirable location with vacant land up for sale. However before purchasing a property there are a few things an intending buyer needs to be aware of in order to secure his investment and ensure he isn’t falling in the hand of fraudsters. Important points to consider before making a land purchase are covered in some detail in the sections below.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
+							<div class="blog-entry">
+								<a href="blog.html" class="blog-img"><img src="images/expansion.jpg" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
+								<div class="desc">
+									<span><small>March 12, 2019 </small> | <small> Location Intel </small> | <small> <i class="icon-bubble3"></i> 4</small></span>
+									<h3><a href="blog.html">HOW LOCATION INTELLIGENCE HELPS BUSINESSES WITH EXPANSION DECISIONS</a></h3>
+									<p>A primary aspiration of every business that has a goal of industry penetration is constant growth often through expansion of portfolio or service coverage area. Various technologies available today are being used by businesses to predict areas of potential expansion and market indicators that help with growth. One of these is the use of spatial technologies in decision support, efficient service delivery, efficient resource utilization and actionable intelligence. </p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 animate-box">
+							<p><a href="#" class="btn btn-primary btn-lg btn-load-more">Load more <i class="icon-reload"></i></a></p>
+						</div>
+					</div>
+				</div>
+			</section>
 
-                <h2>Become a Geo-Guru</h2>
+			<section class="colorlib-contact" data-section="contact" id="contact">
+				<div class="colorlib-narrow-content">
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+							<span class="heading-meta">Get in Touch</span>
+							<h2 class="colorlib-heading">Contact</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-5">
+							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
+								<div class="colorlib-icon">
+									<i class="icon-globe-outline"></i>
+								</div>
+								<div class="colorlib-text">
+									<p><a href="mailto:mosulaim@gmail.com">mosulaim@gmail.com</a></p>
+								</div>
+							</div>
 
-                <h3>Web Cloud Services</h3>
-                <p>Some text here</p>
+							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
+								<div class="colorlib-icon">
+									<i class="icon-map"></i>
+								</div>
+								<div class="colorlib-text">
+									<p>PO Box 20004 Rpo Parkland, S3N 4A9, Yorkton, SK, Canada</p>
+								</div>
+							</div>
 
-                <h3>Manage Databases</h3>
-                <p>Some text here</p>
+							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
+								<div class="colorlib-icon">
+									<i class="icon-phone"></i>
+								</div>
+								<div class="colorlib-text">
+									<p><a href="tel:+2348182658609">+234 818 265 8609</a></p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-7 col-md-push-1">
+							<div class="row">
+								<div class="col-md-10 col-md-offset-1 col-md-pull-1 animate-box" data-animate-effect="fadeInRight">
+									<form name="contact" method="POST" action="https://formspree.io/mosulaim@gmail.com">
+										<div class="form-group">
+											<input type="text" name="name" class="form-control" placeholder="Name" required>
+										</div>
+										<div class="form-group">
+											<input type="text" name="email" class="form-control" placeholder="Email" required	>
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" placeholder="Subject">
+										</div>
+										<div class="form-group">
+											<textarea name="message" id="message" cols="30" rows="7" class="form-control" placeholder="Message" required></textarea>
+										</div>
+										<div class="form-group">
+											<input type="submit" class="btn btn-primary btn-send-message" value="Send Message">
+										</div>
+									</form>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 
-                <h2>Enterprise Content Management</h2>
-                  <ul>
-                    <li><a href="http://geostation.net/#/">Developer Center</a></li>
-                    <li><a href="#">User Guide</a></li>
-                    <li><a href="#">Support</a></li>
-                    <li><a href="#">Documentation</a></li>
-                  </ul>
-                 <h3>Contact Us</h3>
-                <p>Mobile: +234 818 265 8609 </p>
-                <p>Email: <a href="mosulaim@gmail.com">mosulaim@gmail.com</a></p>
-          </section>
-        </div>
+		</div><!-- end:colorlib-main -->
+		
+		<div class="colorlib-footer">
+				<p><small>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+		Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+		<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> 
+				<div class="text-center">
+						<a href="https://www.facebook.com/sulaiman.mosuro" target="_blank"><i class="icon-facebook2"></i></a>
+						<a href="http://github.com/mosulaim" target="_blank"><i class="icon-github"></i></a>
+						<a href="https://www.geos.ed.ac.uk/~mscgis/11-12/s1062870" target="_blank"><i class="icon-briefcase3"></i></a>
+						<a href="#contact"><i class="icon-phone3"></i></a>
+						<a href="http://linkedin.com/in/sulaimanmosuro" target="_blank"><i class="icon-linkedin2"></i></a>
+				</div>
+			</div>
+	</div><!-- end:container-wrap -->
+	</div><!-- end:colorlib-page -->
 
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Flexslider -->
+	<script src="js/jquery.flexslider-min.js"></script>
+	<!-- Owl carousel -->
+	<script src="js/owl.carousel.min.js"></script>
+	<!-- Counters -->
+	<script src="js/jquery.countTo.js"></script>
+	
+	
+	<!-- MAIN JS -->
+	<script src="js/main.js"></script>
 
-        <footer>
-          <div class="logo"><a href="#"></a></div>
-        </footer>
-</section>
-
-</body>
+	</body>
 </html>
+
